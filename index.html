@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
     <style>
-        header{
+        header {
             background-color: rgba(242, 210, 123, 0.997);
-            color:rgba(115, 65, 27, 0.966);
+            color: rgba(115, 65, 27, 0.966);
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
             border: 5px solid rgb(165, 97, 42);
             padding: 16px;
         }
-        main{
+
+        main {
             background-color: rgba(254, 254, 248, 0.99);
             color: rgb(146, 81, 6);
             text-align: center;
@@ -24,23 +26,22 @@
             padding: 16px;
             display: flex;
         }
-        img{
-            
+
+        img {
+
             width: 80px;
             height: 80px;
 
         }
 
-            .artigo-autor {
-                font-weight: bold;
-            }
-        
-            
-    
+        .artigo-autor {
+            font-weight: bold;
+        }
     </style>
 </head>
+
 <body>
-    
+
     <header>
         <h1> Tudo Sobre Gatos</h1>
         <p>Bem-vindo ao Tudo Sobre Gatos! aqui você encontra curiosidades, dicas de cuidados, alimentação,
@@ -48,12 +49,14 @@
     </header>
 
     <main>
-        <img src="imagem-blog.png" alt="Vários gatinhos filhotes fofos de diferentes cores reunidos dentro de um cesto de palha com uma manta aconchegante em uma sala iluminada.">
+        <img src="imagem-blog.png"
+            alt="Vários gatinhos filhotes fofos de diferentes cores reunidos dentro de um cesto de palha com uma manta aconchegante em uma sala iluminada.">
 
         <div>
             <h2>Aqui teremos nossa primeira postagem</h2>
             <p>Irei compartilhar também um pouco da minha rotinha com os meus 11 Gatos</p>
             <p class="artigo-autor"> Por: Nicolly Reis</p>
+            <button>🤎<span>0</span></button>
             <button>🤎<span>0</span></button>
         </div>
 
@@ -62,8 +65,15 @@
 </body>
 
 <script>
-const botao = document.querySelector("button");
-botao.addEventListener("click", botaoClicado);
+    const botoes = document.querySelectorAll("main button");
+    botoes.forEach(function (botao) {
+        botao.addEventListener("click", botaoClicado);
+        function botaoClicado() {
+            console.log("fui clicado");
+            let texto = botao.querySelector("span");
+            texto.textContent++;
+        }
+    });
 
 </script>
 
